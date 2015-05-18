@@ -1,35 +1,74 @@
+// VARIABLES
+var d, h, m, s;
 
+// CLOCK
 var normalTime = setInterval(function() {
-  // variables
-  var d = new Date();
+  d = new Date();
   
-  var h = d.getHours();
+  h = d.getHours();
   
-  var m = d.getMinutes();
+  m = d.getMinutes();
   
-  var s = d.getSeconds();
-  // end variables
+  s = d.getSeconds();
 
-  var timeDisplay = document.querySelector(".time");
-  var changeFormat = document.querySelector(".cngbtn");
-
-  // zeroes
-  if (s <= 9) {
-    s = "0" + s;
-  }
-  if (h <= 9) {
-    h = "0" + h;
-  }
-  if (m <= 9) {
-    m = "0" + m; 
-  }
-  // end zeroes
 
   // 12hr time
   if (h > 12) {
     h = h - 12;
   }
-  var fullTimer = h + ":" + m + ":" + s;
+  // end 12hr time
 
-  document.querySelector(".time").innerHTML = fullTimer;
+  // zeroes
+  if (h <= 9) {
+    h = "0" + h; 
+  }
+  if (s <= 9) {
+    s = "0" + s;
+  }
+  if (m <= 9) {
+    m = "0" + m; 
+  }
+
+  // display on page
+  var displayTimer = h + ":" + m + ":" + s;
+  document.querySelector(".time").innerHTML = displayTimer;
+
+  // background color
+  document.body.backgroundColor = displayTimer;
+
+  // timeout
+  setTimeout(normalTime, 1000);
 });
+
+var colorTime = setInterval(function () {
+  d = new Date();
+  
+  h = d.getHours();
+  
+  m = d.getMinutes();
+  
+  s = d.getSeconds();
+
+
+  // 12hr time
+  if (h > 12) {
+    h = h;
+  }
+  // end 12hr time
+
+  //zeroes
+
+  if (h <= 9) {
+    h = "0" + h; 
+  }
+  if (s <= 9) {
+    s = "0" + s;
+  }
+  if (m <= 9) {
+    m = "0" + m; 
+  }
+
+  var displayColor = "#" + h + m + s;
+  document.querySelector(".color").innerHTML = displayColor;
+}
+  );

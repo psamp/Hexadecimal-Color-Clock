@@ -1,5 +1,5 @@
 body {
-  background:lightblue;
+  
 }
 
 .container {
@@ -11,8 +11,18 @@ body {
 
 .time {
   font-size: 100px;
-  color:lightblue;
-  background-color: white;
+  // color:lightblue;
+  // background-color: white;
+  width:500px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+}
+
+.color {
+   font-size: 50px;
+  // color:lightblue;
+  // background-color: white;
   width:500px;
   margin-right: auto;
   margin-left: auto;
