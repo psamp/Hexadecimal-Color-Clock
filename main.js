@@ -1,5 +1,6 @@
 
-var normalTime = setInterval(function() { 
+var normalTime = setInterval(function() {
+  // variables
   var d = new Date();
   
   var h = d.getHours();
@@ -7,8 +8,37 @@ var normalTime = setInterval(function() {
   var m = d.getMinutes();
   
   var s = d.getSeconds();
+  // end variables
 
+  //zeroes
+  if (s <= 9) {
+    s = "0" + s;
+  }
+  if (h <= 9) {
+    h = "0" + h;
+  }
+  if (m <= 9) {
+    m = "0" + m; 
+  }
+  // end zeroes
+
+  // 12hr time
+  if (h > 12) {
+    h = h - 12;
+  }
+  // end 12hr time
+
+  //switch between 12hr and military time
+
+  // function switchTime(event) {
+
+  // }
+
+  // one.addEventListener("click", switchTime)
+  // two.addEventListener("click", switchTime)
+
+  //end
   var fullTimer = h + ":" + m + ":" + s;
 
-  document.querySelector(".hex").innerHTML = fullTimer;
+  document.querySelector(".time").innerHTML = fullTimer;
 });
