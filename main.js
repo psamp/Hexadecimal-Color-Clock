@@ -10,7 +10,10 @@ var normalTime = setInterval(function() {
   var s = d.getSeconds();
   // end variables
 
-  //zeroes
+  var timeDisplay = document.querySelector(".time");
+  var changeFormat = document.querySelector(".cngbtn");
+
+  // zeroes
   if (s <= 9) {
     s = "0" + s;
   }
@@ -26,18 +29,6 @@ var normalTime = setInterval(function() {
   if (h > 12) {
     h = h - 12;
   }
-  // end 12hr time
-
-  //switch between 12hr and military time
-
-  // function switchTime(event) {
-
-  // }
-
-  // one.addEventListener("click", switchTime)
-  // two.addEventListener("click", switchTime)
-
-  //end
   var fullTimer = h + ":" + m + ":" + s;
 
   document.querySelector(".time").innerHTML = fullTimer;
