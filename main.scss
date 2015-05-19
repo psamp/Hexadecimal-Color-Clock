@@ -1,30 +1,45 @@
-body {
-  
+$font:"Lato";
+$opacity5:.5;
+$marginauto:auto;
+$height:100%;
+$innerborder:1px white solid;
+$borderadius:100px;
+
+@mixin marginauto($marginauto) {
+  margin-right: $marginauto;
+  margin-left: $marginauto;
+}
+
+@mixin heightwidth($height) {
+  height:$height;
+  width:50%;
+}
+
+@mixin innerborder($innerborder) {
+  padding:10px;
+  border:$innerborder;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  opacity:$opacity5;
 }
 
 .container {
   margin-top: 300px;
-  margin-right: auto;
-  margin-left: auto;
+  @include marginauto($marginauto);
+  @include heightwidth($height);
+  @include innerborder($innerborder);
   text-align: center;
-  font-family: 'Lato'; }
-
-.time {
-  font-size: 100px;
-  // color:lightblue;
-  // background-color: white;
-  width:500px;
-  margin-right: auto;
-  margin-left: auto;
-  border-radius: 50%;
-}
-
-.color {
-   font-size: 50px;
-  // color:lightblue;
-  // background-color: white;
-  width:500px;
-  margin-right: auto;
-  margin-left: auto;
-  border-radius: 50%;
+  font-family: $font;
+  opacity:$opacity5;
+  color:white;
+  font-weight:100;
+    .time {
+      font-size: 100px;
+      @include marginauto($marginauto);
+    }
+    .color {
+      font-size: 50px;
+      @include marginauto($marginauto);
+    }
 }

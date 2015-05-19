@@ -31,10 +31,10 @@ var normalTime = setInterval(function() {
 
   // display on page
   var displayTimer = h + ":" + m + ":" + s;
-  document.querySelector(".time").innerHTML = displayTimer;
+  document.getElementById("time").innerHTML = displayTimer;
 
   // background color
-  document.body.backgroundColor = displayTimer;
+  document.getElementById("time").backgroundColor = displayTimer;
 
   // timeout
   setTimeout(normalTime, 1000);
@@ -50,11 +50,11 @@ var colorTime = setInterval(function () {
   s = d.getSeconds();
 
 
-  // 12hr time
+  // no-12hr time
   if (h > 12) {
     h = h;
   }
-  // end 12hr time
+  // end no-12hr time
 
   //zeroes
 
@@ -67,8 +67,22 @@ var colorTime = setInterval(function () {
   if (m <= 9) {
     m = "0" + m; 
   }
+  // end zeroes
 
+  // hex time
   var displayColor = "#" + h + m + s;
-  document.querySelector(".color").innerHTML = displayColor;
+  // end hex time
+
+  // drop in dom node
+  document.getElementById("color").innerHTML = displayColor;
+  // end drop in dom node
+
+  // change background color
+  document.getElementById("container").style.backgroundColor = displayColor;
+  // end change background color
+
+  // apply background to whole page, not just container
+  document.querySelector("body").style.backgroundColor = displayColor;
+  end
 }
   );
