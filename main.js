@@ -4,11 +4,11 @@ var d, h, m, s;
 // CLOCK
 var normalTime = setInterval(function() {
   d = new Date();
-  
+
   h = d.getHours();
-  
+
   m = d.getMinutes();
-  
+
   s = d.getSeconds();
 
 
@@ -20,13 +20,13 @@ var normalTime = setInterval(function() {
 
   // zeroes
   if (h <= 9) {
-    h = "0" + h; 
+    h = "0" + h;
   }
   if (s <= 9) {
     s = "0" + s;
   }
   if (m <= 9) {
-    m = "0" + m; 
+    m = "0" + m;
   }
 
   // display on page
@@ -42,11 +42,11 @@ var normalTime = setInterval(function() {
 
 var colorTime = setInterval(function () {
   d = new Date();
-  
+
   h = d.getHours();
-  
+
   m = d.getMinutes();
-  
+
   s = d.getSeconds();
 
 
@@ -59,13 +59,13 @@ var colorTime = setInterval(function () {
   //zeroes
 
   if (h <= 9) {
-    h = "0" + h; 
+    h = "0" + h;
   }
   if (s <= 9) {
     s = "0" + s;
   }
   if (m <= 9) {
-    m = "0" + m; 
+    m = "0" + m;
   }
   // end zeroes
 
@@ -83,6 +83,5 @@ var colorTime = setInterval(function () {
 
   // apply background to whole page, not just container
   document.querySelector("body").style.backgroundColor = displayColor;
-  end
 }
   );
